@@ -1,4 +1,5 @@
 'use client'
+import AboutMe from '@/components/home/AboutMe'
 import HeroSection from '@/components/home/HeroSection'
 import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
@@ -11,6 +12,7 @@ export default function Home() {
 
 				<Header />
 				<HeroSection />
+				<AboutMe />
 				<Footer />
 			</main>
 		</>
