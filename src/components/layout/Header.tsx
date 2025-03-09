@@ -15,12 +15,12 @@ export default function Header() {
 				<p className="font-semibold text-lg">soumak.</p>
 			</Link>
 
-			<button
+			{/* <button
 				className="h-10 w-10 rounded-full border grid place-content-center hover:bg-muted"
 				onClick={toggleTheme}
 			>
 				{theme === 'light' ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
-			</button>
+			</button> */}
 		</header>
 	)
 }
