@@ -26,9 +26,9 @@ export interface IProject {
 
 export const projects: IProject[] = [
 	{
-		name: 'PhoneDipo',
-		description: 'An ecommerce platform to buy, sell and repair mobile phones',
-		github: '',
+		name: 'Swift Shop',
+		description: 'An ecommerce application',
+		github: 'https://github.com/soumakk/swift-shop',
 		site: 'https://phonedipo.com/',
 		image: '/images/phonedipo.png',
 		techstack: [Tech.React, Tech.Next, Tech.TypeScript, Tech.MUI],
