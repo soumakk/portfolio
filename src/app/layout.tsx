@@ -1,12 +1,20 @@
-import { ThemeProvider } from 'next-themes'
+import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
-import { Poppins } from 'next/font/google'
+import { ThemeProvider } from 'next-themes'
+import { Domine, Livvic } from 'next/font/google'
 import './globals.css'
 
-const poppins = Poppins({
+const sans = Livvic({
 	subsets: ['latin'],
 	display: 'swap',
 	weight: ['400', '500', '600', '700'],
+	variable: '--font-sans',
+})
+
+const serif = Domine({
+	subsets: ['latin'],
+	display: 'swap',
+	variable: '--font-serif',
 })
 
 export const metadata: Metadata = {
@@ -54,7 +62,7 @@ export default function RootLayout({
 				<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 				<link rel="canonical" href="https://soumak.dev" />
 			</head>
-			<body className={poppins.className}>
+			<body className={cn(sans.variable, serif.variable)}>
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="dark"

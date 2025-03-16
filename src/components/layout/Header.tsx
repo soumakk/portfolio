@@ -1,14 +1,11 @@
-import { Moon, Sun } from 'lucide-react'
-import { useTheme } from 'next-themes'
 import Link from 'next/link'
-import React from 'react'
 
 export default function Header() {
-	const { setTheme, theme } = useTheme()
+	// const { setTheme, theme } = useTheme()
 
-	function toggleTheme() {
-		setTheme(theme === 'light' ? 'dark' : 'light')
-	}
+	// function toggleTheme() {
+	// 	setTheme(theme === 'light' ? 'dark' : 'light')
+	// }
 	return (
 		<header className="max-w-6xl mx-auto px-6 flex items-center justify-between py-10">
 			<Link href="/">
@@ -21,6 +18,17 @@ export default function Header() {
 			>
 				{theme === 'light' ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
 			</button> */}
+
+			<nav>
+				<ul className="flex items-center gap-8">
+					<li>
+						<Link href="/">Home</Link>
+					</li>
+					<li>
+						<Link href="/blog">Blog</Link>
+					</li>
+				</ul>
+			</nav>
 		</header>
 	)
 }

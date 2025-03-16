@@ -25,21 +25,21 @@ export interface IProject {
 }
 
 export const projects: IProject[] = [
-	// {
-	// 	name: 'Swift Shop',
-	// 	description: 'An ecommerce application',
-	// 	github: 'https://github.com/soumakk/swift-shop',
-	// 	site: 'https://phonedipo.com/',
-	// 	image: '/images/phonedipo.png',
-	// 	techstack: [Tech.React, Tech.Next, Tech.TypeScript, Tech.MUI],
-	// },
+	{
+		name: 'Swift Shop',
+		description: 'An simple ecommerce platform',
+		github: 'https://github.com/soumakk/swift-shop',
+		site: 'https://swift-shop-store.netlify.app/',
+		image: '/images/swift.png',
+		techstack: [Tech.React, Tech.Next, Tech.TypeScript],
+	},
 	{
 		name: 'Tasks Flow',
 		description: "It's is a task management application",
 		github: 'https://github.com/soumakk/tasksflow',
 		site: 'https://tasks-flow-app.netlify.app/',
-		image: '/images/zylo.png',
-		techstack: [Tech.React, Tech.Next, Tech.TypeScript, Tech.Tailwind],
+		image: '/images/task.png',
+		techstack: [Tech.React, Tech.Vite, Tech.TypeScript, Tech.Tailwind],
 	},
 	{
 		name: 'Nova Calendar',
