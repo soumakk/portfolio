@@ -19,7 +19,7 @@ export default function Header() {
 				{theme === 'light' ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
 			</button> */}
 
-			<nav>
+			{/* <nav>
 				<ul className="flex items-center gap-8">
 					<li>
 						<Link href="/">Home</Link>
@@ -28,7 +28,7 @@ export default function Header() {
 						<Link href="/blog">Blog</Link>
 					</li>
 				</ul>
-			</nav>
+			</nav> */}
 		</header>
 	)
 }

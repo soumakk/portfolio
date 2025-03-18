@@ -17,7 +17,10 @@ export default function HeroSection() {
 				</p>
 
 				<Link href="/resume.pdf" target="_blank" rel="noreferrer">
-					<Button size="lg" className="rounded-full h-14 text-base px-8 font-semibold">
+					<Button
+						size="lg"
+						className="rounded-full h-14 text-base px-8 font-semibold cursor-pointer"
+					>
 						View resume
 					</Button>
 				</Link>
