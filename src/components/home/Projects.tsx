@@ -20,7 +20,7 @@ function ProjectItem({ project }: { project: IProject }) {
 		<div className="relative p-8  group/card">
 			<div className="absolute h-full transition-all duration-200 ease-out opacity-0 scale-90 group-hover/card:scale-100 group-hover/card:opacity-100 w-full inset-0 -z-10 rounded-3xl bg-card"></div>
 
-			<div className="grid grid-cols-2 gap-8">
+			<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 				<figure>
 					<img src={project.image} alt="" className="rounded-xl mb-6" />
 				</figure>

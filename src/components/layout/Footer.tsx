@@ -1,7 +1,7 @@
 import LinkButton from '../custom/LinkButton'
 
 export const SocialLinks = {
-	Github: 'https://github.com/soumakkdev',
+	Github: 'https://github.com/soumakk',
 	LinkedIn: 'https://www.linkedin.com/in/soumakkdutta/',
 }
 

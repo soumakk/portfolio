@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 		'Dutta',
 		'Soumak Dutta',
 		'soumak dev',
-		'soumakkdev',
+		'soumakk',
 		'soumak.dev',
 		'frontend',
 		'developer',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 		'css',
 		'tailwind.css',
 	],
-	authors: [{ name: 'soumakkdev', url: 'https://github.com/soumakkdev' }],
+	authors: [{ name: 'soumak', url: 'https://github.com/soumakk' }],
 	openGraph: {
 		title: 'Soumak Dutta | Frontend Developer Portfolio',
 		description:

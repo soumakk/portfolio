@@ -44,7 +44,7 @@ export const projects: IProject[] = [
 	{
 		name: 'Nova Calendar',
 		description: 'A simple calendar app to track events, inspired by Google calender',
-		github: 'https://github.com/soumakkdev/calendar-app',
+		github: 'https://github.com/soumakk/calendar-app',
 		site: 'https://nova-calendar.netlify.app/',
 		image: '/images/nova.png',
 		techstack: [Tech.React, Tech.Vite, Tech.TypeScript, Tech.Tailwind],
@@ -52,7 +52,7 @@ export const projects: IProject[] = [
 	{
 		name: 'Hue Picker',
 		description: 'A simple color picker that shows a detailed color options',
-		github: 'https://github.com/soumakkdev/color-picker',
+		github: 'https://github.com/soumakk/color-picker',
 		site: 'https://hue-picker.netlify.app/',
 		image: '/images/hue.png',
 		techstack: [Tech.React, Tech.Vite, Tech.TypeScript],
