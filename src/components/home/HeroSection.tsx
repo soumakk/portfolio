@@ -4,7 +4,7 @@ import { Button } from '../ui/button'
 export default function HeroSection() {
 	return (
 		<div className="max-w-6xl mx-auto px-6 py-8 relative">
-			<div className="max-w-4xl my-20">
+			<div className="max-w-3xl my-20">
 				<h1 className="text-5xl lg:text-[4.1rem] leading-tight font-semibold mb-6">
 					<span className="text-primary">Frontend Developer</span> crafting web
 					experiences

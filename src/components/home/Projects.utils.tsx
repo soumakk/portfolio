@@ -25,14 +25,14 @@ export interface IProject {
 }
 
 export const projects: IProject[] = [
-	{
-		name: 'Swift Shop',
-		description: 'An simple ecommerce platform',
-		github: 'https://github.com/soumakk/swift-shop',
-		site: 'https://swift-shop-store.netlify.app/',
-		image: '/images/swift.png',
-		techstack: [Tech.React, Tech.Next, Tech.TypeScript],
-	},
+	// {
+	// 	name: 'Swift Shop',
+	// 	description: 'An simple ecommerce platform',
+	// 	github: 'https://github.com/soumakk/swift-shop',
+	// 	site: 'https://swift-shop-store.netlify.app/',
+	// 	image: '/images/swift.png',
+	// 	techstack: [Tech.React, Tech.Next, Tech.TypeScript],
+	// },
 	{
 		name: 'Tasks Flow',
 		description: "It's is a task management application",
