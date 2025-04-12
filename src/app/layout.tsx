@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { ThemeProvider } from 'next-themes'
 import { Domine, Livvic } from 'next/font/google'
 import './globals.css'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const sans = Livvic({
 	subsets: ['latin'],
@@ -61,6 +62,7 @@ export default function RootLayout({
 				<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 				<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 				<link rel="canonical" href="https://soumak.dev" />
+				<GoogleAnalytics gaId="G-W52Q294D1Z" />
 			</head>
 			<body className={cn(sans.variable, serif.variable)}>
 				<ThemeProvider
