@@ -1,11 +1,12 @@
 import Link from 'next/link'
 import { Button } from '../ui/button'
+import { SocialLinks } from '../layout/Footer'
 
 export default function HeroSection() {
 	return (
 		<div className="max-w-6xl mx-auto px-6 py-8 relative">
 			<div className="max-w-3xl my-20">
-				<h1 className="text-5xl lg:text-[4.1rem] leading-tight font-semibold mb-6">
+				<h1 className="text-5xl lg:text-6xl leading-tight font-semibold mb-6">
 					<span className="text-primary">Frontend Developer</span> crafting web
 					experiences
 				</h1>
@@ -16,14 +17,32 @@ export default function HeroSection() {
 					design, I bring both creativity and precision to every project.
 				</p>
 
-				<Link href="/resume.pdf" target="_blank" rel="noreferrer">
-					<Button
-						size="lg"
-						className="rounded-full h-14 text-base px-8 font-semibold cursor-pointer"
-					>
-						View resume
-					</Button>
-				</Link>
+				<div className="flex gap-2 flex-wrap">
+					<Link href="/resume.pdf" target="_blank" rel="noreferrer">
+						<Button
+							size="lg"
+							className="rounded-full h-10 md:h-12 text-base px-6 md:px-7 font-semibold cursor-pointer"
+						>
+							View resume
+						</Button>
+					</Link>
+					<Link href={SocialLinks.LinkedIn} target="_blank" rel="noreferrer">
+						<Button
+							size="lg"
+							className="rounded-full h-10 md:h-12 text-base px-6 md:px-7 font-semibold cursor-pointer bg-[#0b65c3] hover:bg-[#0b65c3] text-white"
+						>
+							LinkedIn
+						</Button>
+					</Link>
+					<Link href={SocialLinks.Github} target="_blank" rel="noreferrer">
+						<Button
+							size="lg"
+							className="rounded-full h-10 md:h-12 text-base px-6 md:px-7 font-semibold cursor-pointer bg-[#e8ebee] hover:bg-[#e8ebee] text-[#1f2328]"
+						>
+							GitHub
+						</Button>
+					</Link>
+				</div>
 			</div>
 		</div>
 	)
