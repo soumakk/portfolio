@@ -18,19 +18,21 @@ export default async function BlogPost({ params }: PageProps) {
 	const content = Markdoc.transform(ast)
 
 	return (
-		<>
+		<div className="max-w-4xl mx-auto px-6">
 			<Header />
 
-			<section className="max-w-3xl mx-auto px-6">
-				<h2 className="text-4xl font-bold mb-2">{metadata.title}</h2>
+			<section className="my-10">
+				<h2 className="text-3xl font-semibold mb-2">{metadata.title}</h2>
 				<p className="text-muted-foreground">{metadata.date}</p>
 
 				<Suspense fallback={<>Loading...</>}>
-					<div id="markdown">{Markdoc.renderers.react(content, React)}</div>
+					<div id="markdown" className="mt-16">
+						{Markdoc.renderers.react(content, React)}
+					</div>
 				</Suspense>
 			</section>
 
 			<Footer />
-		</>
+		</div>
 	)
 }

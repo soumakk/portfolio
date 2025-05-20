@@ -20,15 +20,15 @@ export default async function BlogsList() {
 	const blogsList = await Promise.all(promises)
 
 	return (
-		<div>
+		<div className="max-w-4xl mx-auto px-6">
 			<Header />
 
-			<section className="max-w-3xl mx-auto px-6">
-				<h2 className="text-3xl font-bold mb-6">Blogs</h2>
+			<section className="my-10">
+				<h2 className="text-2xl font-semibold mb-6">blogs</h2>
 
 				{blogsList?.map((blog, idx) => (
 					<div key={idx} className="py-2">
-						<Link href={`/blog/${blog.slug}`}>
+						<Link href={`/blogs/${blog.slug}`}>
 							<h3 className="text-xl font-medium hover:underline">{blog.title}</h3>
 							<p className="text-base text-muted-foreground">{blog.date}</p>
 						</Link>

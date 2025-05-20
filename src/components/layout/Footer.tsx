@@ -7,7 +7,9 @@ export const SocialLinks = {
 
 export default function Footer() {
 	return (
-		<section className="max-w-6xl mx-auto px-6 mt-20 mb-12">
+		<section className="mt-20 mb-12">
+			<h2 className="text-2xl text-muted-foreground mb-8">get in touch</h2>
+
 			<div className="flex justify-between flex-col gap-5 lg:flex-row">
 				<div className="flex gap-8">
 					<LinkButton
@@ -24,18 +26,11 @@ export default function Footer() {
 						rel="noreferrer"
 						text="LinkedIn"
 					/>
-					<LinkButton
-						hideArrow
-						href="/resume.pdf"
-						target="_blank"
-						rel="noreferrer"
-						text="Resume"
-					/>
 					<LinkButton hideArrow href="mailto:soumakkdutta@gmail.com" text="Email me" />
 				</div>
 
 				<p className="text-sm text-muted-foreground">
-					&copy; {new Date().getFullYear()} Soumak Dutta
+					&copy; {new Date().getFullYear()} Soumak
 				</p>
 			</div>
 		</section>

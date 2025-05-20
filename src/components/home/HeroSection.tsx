@@ -1,23 +1,16 @@
-import Link from 'next/link'
-import { Button } from '../ui/button'
-import { SocialLinks } from '../layout/Footer'
-
 export default function HeroSection() {
 	return (
-		<div className="max-w-6xl mx-auto px-6 py-8 relative">
-			<div className="max-w-3xl my-20">
-				<h1 className="text-5xl lg:text-6xl leading-tight font-semibold mb-6">
-					<span className="text-primary">Frontend Developer</span> crafting web
-					experiences
-				</h1>
+		<div className="max-w-lg my-20 relative">
+			<h1 className="text-4xl font-semibold mb-4">Hi I’m Soumak.</h1>
+			<h1 className="text-2xl mb-6">Frontend Developer crafting web experiences</h1>
 
-				<p className="lg:text-xl leading-relaxed mb-12 text-muted-foreground">
-					I’m Soumak, a frontend developer based in India, specializing in creating
-					visually appealing and highly functional web experiences. With a keen eye for
-					design, I bring both creativity and precision to every project.
-				</p>
+			<p className="text-lg leading-relaxed mb-12 text-muted-foreground">
+				I’m specializing in creating visually appealing and highly functional web
+				experiences. With a keen eye for design, I bring both creativity and precision to
+				every project.
+			</p>
 
-				<div className="flex gap-2 flex-wrap">
+			{/* <div className="flex gap-2 flex-wrap">
 					<Link href="/resume.pdf" target="_blank" rel="noreferrer">
 						<Button
 							size="lg"
@@ -42,8 +35,7 @@ export default function HeroSection() {
 							GitHub
 						</Button>
 					</Link>
-				</div>
-			</div>
+				</div> */}
 		</div>
 	)
 }
