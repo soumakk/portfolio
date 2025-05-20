@@ -28,7 +28,7 @@ export default async function BlogsList() {
 
 				{blogsList?.map((blog, idx) => (
 					<div key={idx} className="py-2">
-						<Link href={`/blogs/${blog.slug}`}>
+						<Link href={`/blog/${blog.slug}`}>
 							<h3 className="text-xl font-medium hover:underline">{blog.title}</h3>
 							<p className="text-base text-muted-foreground">{blog.date}</p>
 						</Link>

@@ -18,16 +18,15 @@ export default function Header() {
 			<nav className="flex items-center gap-10">
 				<ul className="flex items-center gap-8">
 					<li>
-						<Link href="/">projects</Link>
+						<Link href="/blog">blog</Link>
 					</li>
 					<li>
-						<Link href="/blogs">blogs</Link>
+						<Link href="/#about">about</Link>
 					</li>
 					<li>
-						<Link href="/about">about</Link>
-					</li>
-					<li>
-						<Link href="/">resume</Link>
+						<Link href="/resume.pdf" target="_blank" rel="noreferrer">
+							resume
+						</Link>
 					</li>
 				</ul>
 
