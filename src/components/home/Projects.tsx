@@ -4,9 +4,9 @@ import { IProject, projects, techStackInfo } from './Projects.utils'
 
 export default function Projects() {
 	return (
-		<section className="my-32">
+		<section className="my-20 lg:my-32">
 			<h2 className="text-2xl text-muted-foreground">personal projects</h2>
-			<div className="my-6 grid grid-cols-2 gap-8 lg:-mx-8">
+			<div className="my-6 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:-mx-8">
 				{projects?.map((project, idx) => (
 					<ProjectItem key={idx} project={project} />
 				))}

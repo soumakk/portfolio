@@ -1,5 +1,5 @@
 'use client'
-import { Moon, Sun } from 'lucide-react'
+import { Menu, Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
 
@@ -15,7 +15,11 @@ export default function Header() {
 				<p className="font-semibold text-xl">soumak.</p>
 			</Link>
 
-			<nav className="flex items-center gap-10">
+			<div className="block lg:hidden">
+				<Menu />
+			</div>
+
+			<nav className="hidden lg:flex items-center gap-10">
 				<ul className="flex items-center gap-8">
 					<li>
 						<Link href="/blog">blog</Link>
