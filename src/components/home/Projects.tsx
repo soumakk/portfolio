@@ -36,7 +36,7 @@ function ProjectItem({ project }: { project: IProject }) {
 								return (
 									<Tooltip key={techInfo.title} content={techInfo.title}>
 										<a href={techInfo.link} target="_blank" rel="noreferrer">
-											<techInfo.icon />
+											<img src={techInfo.icon} alt={techInfo.title} />
 										</a>
 									</Tooltip>
 								)

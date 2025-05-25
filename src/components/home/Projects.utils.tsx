@@ -1,11 +1,3 @@
-import MUI from '@/components/icons/MUI'
-import NextJs from '@/components/icons/Nextjs'
-import Reactjs from '@/components/icons/Reactjs'
-import Tailwind from '@/components/icons/Tailwind'
-import TypeScript from '@/components/icons/TypeScript'
-import Vite from '@/components/icons/Vite'
-import { SVGProps } from 'react'
-
 enum Tech {
 	'React' = 'react',
 	'Next' = 'next',
@@ -13,6 +5,7 @@ enum Tech {
 	'MUI' = 'mui',
 	'Vite' = 'vite',
 	'TypeScript' = 'typescript',
+	'Hono' = 'hono',
 }
 
 export interface IProject {
@@ -25,20 +18,20 @@ export interface IProject {
 }
 
 export const projects: IProject[] = [
-	// {
-	// 	name: 'Swift Shop',
-	// 	description: 'An simple ecommerce platform',
-	// 	github: 'https://github.com/soumakk/swift-shop',
-	// 	site: 'https://swift-shop-store.netlify.app/',
-	// 	image: '/images/swift.png',
-	// 	techstack: [Tech.React, Tech.Next, Tech.TypeScript],
-	// },
+	{
+		name: 'Simple Finance',
+		description: 'An simple finance tracking app for personal use',
+		github: 'https://github.com/soumakk/simple-finance',
+		site: 'https://simple-finance-app.netlify.app/',
+		image: '/images/projects/finance.png',
+		techstack: [Tech.React, Tech.Vite, Tech.Hono, Tech.TypeScript, Tech.Tailwind],
+	},
 	{
 		name: 'Tasks Flow',
 		description: "It's is a task management application",
 		github: 'https://github.com/soumakk/tasksflow',
 		site: 'https://tasks-flow-app.netlify.app/',
-		image: '/images/task.png',
+		image: '/images/projects/task.png',
 		techstack: [Tech.React, Tech.Vite, Tech.TypeScript, Tech.Tailwind],
 	},
 	{
@@ -46,7 +39,7 @@ export const projects: IProject[] = [
 		description: 'A simple calendar app to track events, inspired by Google calender',
 		github: 'https://github.com/soumakk/calendar-app',
 		site: 'https://nova-calendar.netlify.app/',
-		image: '/images/nova.png',
+		image: '/images/projects/calendar.png',
 		techstack: [Tech.React, Tech.Vite, Tech.TypeScript, Tech.Tailwind],
 	},
 	{
@@ -54,7 +47,7 @@ export const projects: IProject[] = [
 		description: 'A simple color picker that shows a detailed color options',
 		github: 'https://github.com/soumakk/color-picker',
 		site: 'https://hue-picker.netlify.app/',
-		image: '/images/hue.png',
+		image: '/images/projects/hue.png',
 		techstack: [Tech.React, Tech.Vite, Tech.TypeScript],
 	},
 ]
@@ -62,39 +55,44 @@ export const projects: IProject[] = [
 export const techStackInfo: Record<
 	Tech,
 	{
-		icon: React.FunctionComponent<SVGProps<SVGElement>>
+		icon: string
 		link: string
 		title: string
 	}
 > = {
 	[Tech.React]: {
-		icon: Reactjs,
+		icon: '/icons/react.svg',
 		link: 'https://react.dev/',
 		title: 'React',
 	},
 	[Tech.Next]: {
-		icon: NextJs,
+		icon: '/icons/next.svg',
 		link: 'https://nextjs.org/',
 		title: 'Next.js',
 	},
 	[Tech.Tailwind]: {
-		icon: Tailwind,
+		icon: '/icons/tailwind.svg',
 		link: 'https://tailwindcss.com/',
 		title: 'Tailwind CSS',
 	},
 	[Tech.MUI]: {
-		icon: MUI,
+		icon: '/icons/mui.svg',
 		link: 'https://mui.com/',
 		title: 'Material UI',
 	},
 	[Tech.Vite]: {
-		icon: Vite,
+		icon: '/icons/vite.svg',
 		link: 'https://vitejs.dev/',
 		title: 'Vite',
 	},
 	[Tech.TypeScript]: {
-		icon: TypeScript,
+		icon: '/icons/typescript.svg',
 		link: 'https://www.typescriptlang.org/',
 		title: 'TypeScript',
+	},
+	[Tech.Hono]: {
+		icon: '/icons/hono.svg',
+		link: 'https://hono.dev/',
+		title: 'Hono',
 	},
 }
