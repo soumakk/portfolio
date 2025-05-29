@@ -1,23 +1,9 @@
 import Header from '@/components/layout/Header'
-import { promises as fs } from 'fs'
-import matter from 'gray-matter'
+import { fetchBlogs } from '@/lib/blogs'
 import Link from 'next/link'
-import path from 'path'
 
 export default async function BlogsList() {
-	const allFiles = await fs.readdir(path.join(process.cwd(), 'blogs'), 'utf8')
-
-	const promises = allFiles.map(async (file) => {
-		const doc = await fs.readFile(path.join(process.cwd(), 'blogs', `${file}`), 'utf8')
-		const { data: metadata } = matter(doc)
-		return {
-			title: metadata?.title,
-			date: metadata?.date,
-			slug: file?.split('.md')[0],
-		}
-	})
-
-	const blogsList = await Promise.all(promises)
+	const blogsList = await fetchBlogs()
 
 	return (
 		<div className="max-w-4xl mx-auto px-6">

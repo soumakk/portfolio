@@ -1,21 +1,13 @@
+import Footer from '@/components/layout/Footer'
+import Header from '@/components/layout/Header'
+import { getBlogContent } from '@/lib/blogs'
 import Markdoc from '@markdoc/markdoc'
 import React, { Suspense } from 'react'
 import { PageProps } from '../../../../.next/types/app/page'
-import { promises as fs } from 'fs'
-import path from 'path'
-import matter from 'gray-matter'
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
 
 export default async function BlogPost({ params }: PageProps) {
 	const { slug } = await params
-
-	const file = await fs.readFile(path.join(process.cwd(), 'blogs', `${slug}.md`), 'utf8')
-
-	const { data: metadata } = matter(file)
-
-	const ast = Markdoc.parse(file)
-	const content = Markdoc.transform(ast)
+	const { content, metadata } = await getBlogContent(slug)
 
 	return (
 		<div className="max-w-4xl mx-auto px-6">

@@ -1,20 +1,22 @@
-'use client'
 import AboutMe from '@/components/home/AboutMe'
+import Blogs from '@/components/home/Blogs'
 import HeroSection from '@/components/home/HeroSection'
 import Projects from '@/components/home/Projects'
 import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
+import { fetchBlogs } from '@/lib/blogs'
 
-export default function Home() {
+export default async function Home() {
+	const blogsList = await fetchBlogs()
+
 	return (
 		<>
 			<main className="relative overflow-x-hidden">
-				{/* <div className="-z-10 absolute blur-[200px] animate-pulse rounded-full -top-[500px] -left-[100px] h-[200px] w-[1200px] rotate-[40deg] origin-left bg-primary"></div> */}
-
 				<div className="max-w-4xl mx-auto px-6">
 					<Header />
 					<HeroSection />
 					<Projects />
+					<Blogs blogsList={blogsList} />
 					<AboutMe />
 					<Footer />
 				</div>
