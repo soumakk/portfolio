@@ -1,8 +1,9 @@
+import { config } from '@/components/markdoc/config'
+import Markdoc from '@markdoc/markdoc'
 import { promises as fs } from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
 import { IBlogListData } from './types'
-import Markdoc from '@markdoc/markdoc'
 
 export async function fetchBlogs(): Promise<IBlogListData[]> {
 	const allFiles = await fs.readdir(path.join(process.cwd(), 'blogs'), 'utf8')
@@ -13,12 +14,13 @@ export async function fetchBlogs(): Promise<IBlogListData[]> {
 		return {
 			title: metadata?.title,
 			date: metadata?.date,
+			publish: metadata?.publish,
 			slug: file?.split('.md')[0],
 		}
 	})
 
 	const blogsList = await Promise.all(promises)
-	return blogsList
+	return blogsList?.filter((b) => Boolean(b.publish))
 }
 
 export async function getBlogContent(slug: string) {
@@ -27,7 +29,7 @@ export async function getBlogContent(slug: string) {
 	const { data: metadata } = matter(file)
 
 	const ast = Markdoc.parse(file)
-	const content = Markdoc.transform(ast)
+	const content = Markdoc.transform(ast, config)
 
 	return {
 		metadata,

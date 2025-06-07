@@ -1,6 +1,7 @@
 ---
 title: Sample Blog Post
 date: 16th March, 2025
+publish: false 
 ---
 
 ## Why Learn to Code?

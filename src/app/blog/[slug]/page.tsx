@@ -1,11 +1,11 @@
 import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
+import { components } from '@/components/markdoc/components'
 import { getBlogContent } from '@/lib/blogs'
 import Markdoc from '@markdoc/markdoc'
 import React, { Suspense } from 'react'
-import { PageProps } from '../../../../.next/types/app/page'
 
-export default async function BlogPost({ params }: PageProps) {
+export default async function BlogPost({ params }: any) {
 	const { slug } = await params
 	const { content, metadata } = await getBlogContent(slug)
 
@@ -19,7 +19,7 @@ export default async function BlogPost({ params }: PageProps) {
 
 				<Suspense fallback={<>Loading...</>}>
 					<div id="markdown" className="mt-16">
-						{Markdoc.renderers.react(content, React)}
+						{Markdoc.renderers.react(content, React, { components: components })}
 					</div>
 				</Suspense>
 			</section>

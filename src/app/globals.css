@@ -190,5 +190,9 @@
 				@apply my-2 text-base;
 			}
 		}
+
+		pre {
+			@apply p-8 rounded-lg;
+		}
 	}
 }
