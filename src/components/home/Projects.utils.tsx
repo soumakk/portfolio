@@ -18,14 +18,14 @@ export interface IProject {
 }
 
 export const projects: IProject[] = [
-	{
-		name: 'Simple Finance',
-		description: 'An simple finance tracking app for personal use',
-		github: 'https://github.com/soumakk/simple-finance',
-		site: 'https://simple-finance-app.netlify.app/',
-		image: '/images/projects/finance.png',
-		techstack: [Tech.React, Tech.Vite, Tech.Hono, Tech.TypeScript, Tech.Tailwind],
-	},
+	// {
+	// 	name: 'Simple Finance',
+	// 	description: 'An simple finance tracking app for personal use',
+	// 	github: 'https://github.com/soumakk/simple-finance',
+	// 	site: 'https://simple-finance-app.netlify.app/',
+	// 	image: '/images/projects/finance.png',
+	// 	techstack: [Tech.React, Tech.Vite, Tech.Hono, Tech.TypeScript, Tech.Tailwind],
+	// },
 	{
 		name: 'Tasks Flow',
 		description: "It's is a task management application",

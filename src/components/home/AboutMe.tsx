@@ -8,22 +8,24 @@ export default function AboutMe() {
 			<div className="grid grid-cols-1 lg:grid-cols-5 gap-20 my-10">
 				<article className="leading-relaxed space-y-5 lg:col-span-3">
 					<p>
-						Hello, I&apos;m Soumak Dutta, a seasoned Frontend Developer with over 4
-						years of experience in creating visually appealing and user-friendly
-						websites. I specialize in building high-quality enterprise applications and
-						modern e-commerce platforms using React.js, Next.js, Tailwind CSS, and
-						TypeScript.
-					</p>
-					<p>
-						My journey in web development began in college. I am passionate about
-						crafting websites that are not only aesthetically pleasing but also offer a
-						seamless user experience, with a strong belief in the power of simplicity.
+						My web development journey began in college during the PHP era, starting
+						with HTML, CSS, and jQuery before diving deep into JavaScript and the React
+						ecosystem. After mastering React, I expanded into Node.js through freelance
+						work, which taught me valuable client collaboration skills.
 					</p>
 
 					<p>
-						Outside of my professional life, I enjoy riding my bike and practicing
-						boxing. Maintaining a healthy lifestyle, working out, and achieving a
-						balanced work-life are essential to me.
+						This foundation led to my first company role working with React and
+						TypeScript on diverse projects, where I also developed a strong
+						understanding of UI/UX design. I learned to bridge the gap between beautiful
+						interfaces and seamless functionality.
+					</p>
+
+					<p>
+						Today, I&apos;m constantly evolving – exploring AI tools to enhance my
+						development workflow and experimenting with WebGL to create interactive 3D
+						web experiences. Check out my projects and blog where I share insights from
+						my development journey.
 					</p>
 				</article>
 

@@ -22,7 +22,12 @@ function ProjectItem({ project }: { project: IProject }) {
 
 			<div className="grid grid-cols-1 gap-4">
 				<figure>
-					<img src={project.image} alt="" className="rounded-xl border" />
+					<img
+						src={project.image}
+						alt=""
+						className="rounded-xl border h-[200px] object-cover"
+						style={{ overflowClipMargin: 'unset' }}
+					/>
 				</figure>
 
 				<div className="py-3">
