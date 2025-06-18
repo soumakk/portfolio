@@ -18,14 +18,6 @@ export interface IProject {
 }
 
 export const projects: IProject[] = [
-	// {
-	// 	name: 'Simple Finance',
-	// 	description: 'An simple finance tracking app for personal use',
-	// 	github: 'https://github.com/soumakk/simple-finance',
-	// 	site: 'https://simple-finance-app.netlify.app/',
-	// 	image: '/images/projects/finance.png',
-	// 	techstack: [Tech.React, Tech.Vite, Tech.Hono, Tech.TypeScript, Tech.Tailwind],
-	// },
 	{
 		name: 'Tasks Flow',
 		description: "It's is a task management application",
@@ -43,11 +35,19 @@ export const projects: IProject[] = [
 		techstack: [Tech.React, Tech.Vite, Tech.TypeScript, Tech.Tailwind],
 	},
 	{
+		name: 'Shader Editor',
+		description: 'An shader editor to quickly play with vertex and fragment shader',
+		github: 'https://github.com/soumakk/shader-editor',
+		site: 'https://shader-editor.netlify.app/',
+		image: '/images/projects/editor.png',
+		techstack: [Tech.React, Tech.Vite, Tech.TypeScript, Tech.Tailwind],
+	},
+	{
 		name: 'Hue Picker',
 		description: 'A simple color picker that shows a detailed color options',
 		github: 'https://github.com/soumakk/color-picker',
 		site: 'https://hue-picker.netlify.app/',
-		image: '/images/projects/hue.png',
+		image: '/images/projects/picker.png',
 		techstack: [Tech.React, Tech.Vite, Tech.TypeScript],
 	},
 ]
