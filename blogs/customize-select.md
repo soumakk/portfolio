@@ -2,13 +2,12 @@
 title: Custom Select Field with Modern CSS
 date: 16th March, 2025
 publish: true
+poster: customized-select.png
 ---
 
 Customizing the HTML `<select>` element has always been a challenge. Often we needed to rely on JavaScript or third-party libraries to get a consistent look. But now with only CSS, especially the new **`appearance: base-select`** property and related pseudo-elements, we can finally customise select fields with ease —no JavaScript required!
 
 In this post, I’ll walk you through building a beautiful select field and show you how to style every part of it using pure CSS.
-
----
 
 ## **The HTML Structure**
 
@@ -37,8 +36,6 @@ Here’s the select field we’ll be working with:
 
 Notice the use of a **`<button>`** and a custom **`<selectedcontent>`** element inside the select. This allows us to style the selected option in a more flexible way.
 
----
-
 ## **Opting In to Custom Styling**
 
 The first step is to opt in to custom select styling by using the new **`appearance: base-select`** property:
@@ -51,8 +48,6 @@ select,
 ```
 
 This tells the browser to use the new, customizable version of the select field, unlocking a range of new styling possibilities.
-
----
 
 ## **Styling the Select Field**
 
@@ -94,8 +89,6 @@ The **`::picker(select)`** pseudo-element allows you to style the dropdown itse
 
 The **`anchor()`** function lets you precisely position the dropdown relative to the select field.
 
----
-
 ## **Styling the Options**
 
 You can style each `option` with focus, hover and checked state.
@@ -135,8 +128,6 @@ option {
 
 Show a custom checkmark for the selected option using the **`::checkmark`** pseudo-element.
 
----
-
 ## **Customizing the Selected Content**
 
 The **`<selectedcontent>`** element inside the button can also be styled, letting you control the layout of the selected option.
@@ -147,8 +138,6 @@ selectedcontent {
 	gap: 8px;
 }
 ```
-
----
 
 ## **Animating the Picker**
 
