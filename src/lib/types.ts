@@ -5,4 +5,5 @@ export interface IBlogListData {
 	readingTime: string
 	publish: boolean
 	poster: string
+	index: number
 }

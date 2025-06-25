@@ -22,7 +22,7 @@ export async function fetchBlogs(): Promise<IBlogListData[]> {
 	})
 
 	const blogsList = await Promise.all(promises)
-	return blogsList?.filter((b) => Boolean(b.publish))
+	return blogsList?.filter((b) => Boolean(b.publish))?.map((b, idx) => ({ ...b, index: idx }))
 }
 
 export async function getBlogContent(slug: string) {
