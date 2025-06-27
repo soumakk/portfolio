@@ -1,5 +1,6 @@
 import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
+import { Badge } from '@/components/ui/badge'
 import { fetchBlogs } from '@/lib/blogs'
 import Link from 'next/link'
 
@@ -32,6 +33,17 @@ export default async function BlogsList() {
 									<span> &bull; </span>
 									<span>{blog?.readingTime}</span>
 								</p>
+								<div className="flex flex-wrap gap-2 mt-4">
+									{blog?.tags?.map((tag) => (
+										<Badge
+											className="px-4 py-2 rounded-full"
+											variant="outline"
+											key={tag}
+										>
+											{tag}
+										</Badge>
+									))}
+								</div>
 							</Link>
 						</div>
 					))}

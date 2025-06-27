@@ -1,5 +1,6 @@
 import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
+import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { fetchBlogs, getBlogContent } from '@/lib/blogs'
 import { getMDXComponents } from '@/lib/mdx-components'
@@ -52,6 +53,14 @@ export default async function BlogPost({ params }: any) {
 					<span> &bull; </span>
 					<span>{readingTime}</span>
 				</p>
+
+				<div className="flex flex-wrap gap-2 mt-4">
+					{metadata?.tags?.split(',')?.map((tag) => (
+						<Badge className="px-4 py-2 rounded-full" variant="outline" key={tag}>
+							{tag}
+						</Badge>
+					))}
+				</div>
 
 				<Suspense
 					fallback={

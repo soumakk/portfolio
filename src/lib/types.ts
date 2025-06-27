@@ -6,4 +6,5 @@ export interface IBlogListData {
 	publish: boolean
 	poster: string
 	index: number
+	tags: string[]
 }

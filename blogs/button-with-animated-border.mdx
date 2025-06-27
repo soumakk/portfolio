@@ -1,0 +1,37 @@
+---
+title: Make a button with animated border in CSS
+date: 27th June, 2025
+publish: true
+poster: customized-select.png
+tags: Code,CSS
+---
+
+Recently we saw a lot of this trending buttons. They have a border that is moving through the border line of the button.
+
+So first of all lets create the button
+
+```html
+<button class="animated-btn">Register now</button>
+```
+
+Okay now we will create a basic button
+
+```css
+.animated-btn {
+	background: #151515;
+	border: 1px solid transparent;
+	border-radius: 999px;
+	padding: 12px 24px;
+	color: #ffffff;
+	font-size: 14px;
+	cursor: pointer;
+}
+```
+
+Okay now we have a basic button. We need to understand how conic gradient works. Conic gradient is also one type of gradient along with linear and radial gradient. It creates a gradient with color transitions rotated around a centre point.
+
+```css
+.animated-btn {
+	background: conic-gradient(red, orange, yellow, green, blue);
+}
+```

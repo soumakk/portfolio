@@ -15,7 +15,8 @@ export async function fetchBlogs(): Promise<IBlogListData[]> {
 			title: metadata?.title,
 			date: metadata?.date,
 			publish: metadata?.publish,
-			slug: file?.split('.md')[0],
+			tags: metadata?.tags?.split(','),
+			slug: file?.split('.mdx')[0],
 			readingTime: readingTimeResult.text,
 			poster: metadata?.poster,
 		}
@@ -26,7 +27,7 @@ export async function fetchBlogs(): Promise<IBlogListData[]> {
 }
 
 export async function getBlogContent(slug: string) {
-	const file = await fs.readFile(path.join(process.cwd(), 'blogs', `${slug}.md`), 'utf8')
+	const file = await fs.readFile(path.join(process.cwd(), 'blogs', `${slug}.mdx`), 'utf8')
 
 	const { data: metadata, content } = matter(file)
 	const readingTimeResult = readingTime(content)
