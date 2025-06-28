@@ -168,3 +168,7 @@
 		}
 	}
 }
+
+.chars1 {
+	@apply bg-background z-10;
+}

@@ -5,6 +5,7 @@ import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
 
 export default async function Home() {
+	// const blogsList = await fetchBlogs()
 	return (
 		<>
 			<main className="relative overflow-x-hidden">
@@ -12,6 +13,7 @@ export default async function Home() {
 					<Header />
 					<HeroSection />
 					<Projects />
+					{/* <Blogs blogsList={blogsList?.slice(0, 4)} /> */}
 					<AboutMe />
 					<Footer />
 				</div>

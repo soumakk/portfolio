@@ -2,6 +2,7 @@
 import { Menu, Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
+import Logo from '../home/Logo'
 
 export default function Header() {
 	const { setTheme, theme } = useTheme()
@@ -12,7 +13,7 @@ export default function Header() {
 	return (
 		<header className="flex items-center justify-between py-10">
 			<Link href="/">
-				<p className="font-semibold text-xl">soumak.</p>
+				<Logo />
 			</Link>
 
 			<div className="block lg:hidden">
