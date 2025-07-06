@@ -17,7 +17,7 @@ export default function Projects() {
 
 function ProjectItem({ project }: { project: IProject }) {
 	return (
-		<div className="relative p-8 group/card">
+		<div className="relative p-6 group/card">
 			<div className="absolute h-full transition-all duration-200 ease-out opacity-0 scale-90 group-hover/card:scale-100 group-hover/card:opacity-100 w-full inset-0 -z-10 rounded-3xl bg-muted border"></div>
 
 			<div className="grid grid-cols-1 gap-4">
@@ -25,7 +25,7 @@ function ProjectItem({ project }: { project: IProject }) {
 					<img
 						src={project.image}
 						alt=""
-						className="rounded-xl border h-[200px] object-cover"
+						className="rounded-xl border w-full object-cover"
 						style={{ overflowClipMargin: 'unset' }}
 					/>
 				</figure>

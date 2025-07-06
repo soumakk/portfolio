@@ -22,13 +22,13 @@ export default function Header() {
 
 			<nav className="hidden lg:flex items-center gap-10">
 				<ul className="flex items-center gap-8">
-					<li>
+					{/* <li className="hover:underline">
 						<Link href="/blog">blog</Link>
-					</li>
-					<li>
+					</li> */}
+					<li className="hover:underline">
 						<Link href="/#about">about</Link>
 					</li>
-					<li>
+					<li className="hover:underline">
 						<Link href="/resume.pdf" target="_blank" rel="noreferrer">
 							resume
 						</Link>
