@@ -1,0 +1,74 @@
+import { shaderMaterial } from '@react-three/drei'
+import { extend, ThreeElement, useFrame, useThree } from '@react-three/fiber'
+import fragmentShader from './shaders/fragment.glsl'
+import vertexShader from './shaders/vertex.glsl'
+import { useRef } from 'react'
+import * as THREE from 'three'
+import colors from 'nice-color-palettes'
+import { useControls } from 'leva'
+
+const pallete = ['#02050A', '#0D4055', '#3C7E8C', '#B7C0BF', '#256376']
+const r = Math.floor(Math.random() * colors.length - 1)
+
+function getTrueRandomInt(min, max) {
+	const range = max - min + 1
+	const array = new Uint32Array(1)
+	crypto.getRandomValues(array)
+	return Math.floor((array[0] / (0xffffffff + 1)) * range) + min
+}
+
+console.log(r)
+
+const GradientMaterial = shaderMaterial(
+	{
+		uTime: 0,
+		uColors: colors[15]?.map((c) => new THREE.Color(c)),
+		uCoord: new THREE.Vector2(getTrueRandomInt(0.1, 0.2), getTrueRandomInt(0.3, 0.5)),
+	},
+	vertexShader,
+	fragmentShader
+)
+
+declare module '@react-three/fiber' {
+	interface ThreeElements {
+		gradientMaterial: ThreeElement<typeof GradientMaterial>
+	}
+}
+
+extend({ GradientMaterial })
+
+export default function Plane() {
+	const matRef = useRef<any>(null)
+
+	useFrame(({ clock }) => {
+		if (matRef.current) {
+			matRef.current.uTime = clock.elapsedTime * 0.5
+		}
+	})
+
+	return (
+		<mesh position={[0, 0, 0]}>
+			<planeGeometry args={[5, 5, 500, 500]} />
+			<gradientMaterial ref={matRef} wireframe={false} />
+		</mesh>
+	)
+}
+
+export function CameraController() {
+	const { camera } = useThree()
+
+	// const { position } = useControls({
+	// 	position: {
+	// 		value: [0, -1.2, 1.4],
+	// 		step: 0.1,
+	// 	},
+	// })
+
+	useFrame(() => {
+		// camera.position.set(...position)
+		camera.position.set(0, -1.2, 1.4)
+		camera.lookAt(0, 0, 0)
+	})
+
+	return null
+}

@@ -9,13 +9,13 @@ export default async function Home() {
 	return (
 		<>
 			<main className="relative overflow-x-hidden">
-				<div className="max-w-4xl mx-auto px-6">
+				<div className="max-w-[1400px] mx-auto px-6">
 					<Header />
 					<HeroSection />
 					<Projects />
 					{/* <Blogs blogsList={blogsList?.slice(0, 4)} /> */}
-					<AboutMe />
-					<Footer />
+					{/* <AboutMe /> */}
+					{/* <Footer /> */}
 				</div>
 			</main>
 		</>

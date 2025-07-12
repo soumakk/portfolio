@@ -11,7 +11,7 @@ export default function Header() {
 		setTheme(theme === 'light' ? 'dark' : 'light')
 	}
 	return (
-		<header className="flex items-center justify-between py-10">
+		<header className="flex items-center justify-between py-5">
 			<Link href="/">
 				<Logo />
 			</Link>

@@ -4,12 +4,17 @@ import { IProject, projects, techStackInfo } from './Projects.utils'
 
 export default function Projects() {
 	return (
-		<section className="my-20 lg:my-32">
-			<h2 className="text-2xl text-muted-foreground">personal projects</h2>
-			<div className="my-6 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:-mx-8">
-				{projects?.map((project, idx) => (
-					<ProjectItem key={idx} project={project} />
-				))}
+		<section className="my-20 lg:my-40 max-w-4xl mx-auto">
+			<h2 className="text-3xl text-muted-foreground text-center mb-16">
+				Carefully crafted projects
+			</h2>
+			<div className="w-full overflow-auto">
+				{/* <div className="flex gap-8"> */}
+				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+					{projects?.map((project, idx) => (
+						<ProjectItem key={idx} project={project} />
+					))}
+				</div>
 			</div>
 		</section>
 	)
@@ -17,8 +22,8 @@ export default function Projects() {
 
 function ProjectItem({ project }: { project: IProject }) {
 	return (
-		<div className="relative p-6 group/card">
-			<div className="absolute h-full transition-all duration-200 ease-out opacity-0 scale-90 group-hover/card:scale-100 group-hover/card:opacity-100 w-full inset-0 -z-10 rounded-3xl bg-muted border"></div>
+		<div className="relative p-6 group/card bg-muted rounded-4xl min-w-[400px]">
+			{/* <div className="absolute h-full transition-all duration-200 ease-out opacity-0 scale-90 group-hover/card:scale-100 group-hover/card:opacity-100 w-full inset-0 -z-10 rounded-3xl bg-muted border"></div> */}
 
 			<div className="grid grid-cols-1 gap-4">
 				<figure>
