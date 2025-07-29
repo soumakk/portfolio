@@ -1,5 +1,4 @@
 'use client'
-import { Button } from '../ui/button'
 
 export default function HeroSection() {
 	return (
@@ -23,9 +22,9 @@ export default function HeroSection() {
 					and express my creativity through web platform.
 				</p>
 
-				<Button variant="glass" className="rounded-full shadow-none" size="lg">
+				{/* <Button variant="glass" className="rounded-full shadow-none" size="lg">
 					Explore
-				</Button>
+				</Button> */}
 			</div>
 		</div>
 	)

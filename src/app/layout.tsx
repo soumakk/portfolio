@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { ThemeProvider } from 'next-themes'
 import { Arapey, Noto_Sans } from 'next/font/google'
 import './globals.css'
+import LenisScroll from '@/components/custom/LenisScroll'
 
 const sans = Noto_Sans({
 	subsets: ['latin'],
@@ -66,6 +67,7 @@ export default function RootLayout({
 				<GoogleAnalytics gaId="G-W52Q294D1Z" />
 			</head>
 			<body className={cn(sans.variable, serif.variable)}>
+				<LenisScroll />
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="dark"

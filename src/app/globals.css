@@ -162,6 +162,7 @@
 		@apply tracking-tight;
 	}
 	.font-sans {
+		@apply font-light;
 	}
 }
 
