@@ -1,21 +1,22 @@
 import { cn } from '@/lib/utils'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import type { Metadata } from 'next'
 import { ThemeProvider } from 'next-themes'
-import { Domine, Livvic } from 'next/font/google'
+import { Arapey, Noto_Sans } from 'next/font/google'
 import './globals.css'
-import { GoogleAnalytics } from '@next/third-parties/google'
 
-const sans = Livvic({
+const sans = Noto_Sans({
 	subsets: ['latin'],
 	display: 'swap',
-	weight: ['400', '500', '600', '700'],
 	variable: '--font-sans',
+	weight: ['300', '400', '500', '600', '700'],
 })
 
-const serif = Domine({
+const serif = Arapey({
 	subsets: ['latin'],
 	display: 'swap',
 	variable: '--font-serif',
+	weight: ['400'],
 })
 
 export const metadata: Metadata = {
