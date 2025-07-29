@@ -1,11 +1,10 @@
 import { shaderMaterial } from '@react-three/drei'
 import { extend, ThreeElement, useFrame, useThree } from '@react-three/fiber'
-import fragmentShader from './shaders/fragment.glsl'
-import vertexShader from './shaders/vertex.glsl'
+import colors from 'nice-color-palettes'
 import { useRef } from 'react'
 import * as THREE from 'three'
-import colors from 'nice-color-palettes'
-import { useControls } from 'leva'
+import fragmentShader from './shaders/fragment.glsl'
+import vertexShader from './shaders/vertex.glsl'
 
 const pallete = ['#02050A', '#0D4055', '#3C7E8C', '#B7C0BF', '#256376']
 const r = Math.floor(Math.random() * colors.length - 1)
