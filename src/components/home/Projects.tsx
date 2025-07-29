@@ -1,7 +1,5 @@
 import { ArrowRight } from 'lucide-react'
-import LinkButton from '../custom/LinkButton'
-import { Tooltip } from '../ui/tooltip'
-import { IProject, projects, techStackInfo } from './Projects.utils'
+import { IProject, projects } from './Projects.utils'
 
 export default function Projects() {
 	return (
@@ -47,7 +45,7 @@ function ProjectItem({ project }: { project: IProject }) {
 				</div>
 			</div>
 
-			<figure className="relative rounded-2xl overflow-hidden">
+			<figure className="relative rounded-2xl overflow-hidden group/card">
 				<img
 					src={project.image}
 					alt=""
@@ -55,72 +53,18 @@ function ProjectItem({ project }: { project: IProject }) {
 					style={{ overflowClipMargin: 'unset' }}
 				/>
 
-				<div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-b from-transparent to-black/60">
+				<div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-b from-transparent to-black/60 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 ease-out">
 					<div className="flex justify-between items-center px-8 py-5">
-						<p className="font-serif text-2xl">{project.name}</p>
+						<p className="font-serif text-2xl translate-y-6 opacity-0 group-hover/card:opacity-100 group-hover/card:translate-y-0 transition-all duration-300">
+							{project.name}
+						</p>
 
-						<button className="h-10 w-10 grid place-content-center bg-foreground rounded-full">
+						<button className="h-10 w-10 grid place-content-center bg-foreground rounded-full translate-x-5 rotate-45 group-hover/card:translate-x-0 group-hover/card:rotate-0 transition-all duration-500">
 							<ArrowRight className="h-4 w-4 text-background -rotate-45" />
 						</button>
 					</div>
 				</div>
 			</figure>
-		</div>
-	)
-}
-
-function OldProjectItem({ project }: { project: IProject }) {
-	return (
-		<div className="relative p-6 group/card bg-muted rounded-4xl min-w-[400px]">
-			<div className="grid grid-cols-1 gap-4">
-				<figure>
-					<img
-						src={project.image}
-						alt=""
-						className="rounded-xl border w-full object-cover"
-						style={{ overflowClipMargin: 'unset' }}
-					/>
-				</figure>
-
-				<div className="py-3">
-					<p className="text-2xl font-medium mb-2">{project.name}</p>
-					<p className="mb-4 text-muted-foreground">{project.description}</p>
-
-					<div className="flex-1 flex flex-col justify-end">
-						<div className="flex items-center gap-4">
-							{project?.techstack?.map((tech) => {
-								const techInfo = techStackInfo[tech]
-								return (
-									<Tooltip key={techInfo.title} content={techInfo.title}>
-										<a href={techInfo.link} target="_blank" rel="noreferrer">
-											<img src={techInfo.icon} alt={techInfo.title} />
-										</a>
-									</Tooltip>
-								)
-							})}
-						</div>
-
-						<div className="flex gap-6 mt-6">
-							{project.github ? (
-								<LinkButton
-									href={project.github}
-									target="_blank"
-									rel="noreferrer"
-									text="GitHub"
-								/>
-							) : null}
-							{project.site ? (
-								<LinkButton
-									href={project.site}
-									target="_blank"
-									rel="noreferrer"
-									text="Visit Site"
-								/>
-							) : null}
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 	)
 }
