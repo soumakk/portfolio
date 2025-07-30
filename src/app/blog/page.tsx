@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export default async function BlogsList() {
 	const blogsList = await fetchBlogs()
-	console.log(blogsList)
+
 	return (
 		<div className="max-w-4xl mx-auto px-6">
 			<Header />

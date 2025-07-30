@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function About() {
 	return (
-		<section className="py-40">
+		<section className="py-40" id="about">
 			<div className="max-w-md mx-auto leading-relaxed space-y-5">
 				<p>
 					My web development journey began in college during the PHP era, starting with

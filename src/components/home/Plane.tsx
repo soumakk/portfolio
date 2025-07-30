@@ -41,7 +41,7 @@ export default function Plane() {
 
 	useFrame(({ clock }) => {
 		if (matRef.current) {
-			matRef.current.uTime = clock.elapsedTime * 0.5
+			matRef.current.uTime = clock.elapsedTime * 0.1
 		}
 	})
 

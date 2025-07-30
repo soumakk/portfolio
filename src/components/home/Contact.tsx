@@ -12,7 +12,7 @@ const email = 'soumakkdutta@gmail.com'
 
 export default function Contact() {
 	return (
-		<section className="my-40 max-w-4xl mx-auto">
+		<section className="my-40 max-w-4xl mx-auto" id="contact">
 			<h2 className="font-serif text-3xl mb-4">Want to get in touch? Or just say Hi?</h2>
 			<p>
 				Drop me a line at <a href={`mailto:${email}`}>{email}</a>

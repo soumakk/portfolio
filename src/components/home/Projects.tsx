@@ -3,7 +3,7 @@ import { IProject, projects } from './Projects.utils'
 
 export default function Projects() {
 	return (
-		<section className="my-20 lg:my-32 max-w-4xl mx-auto">
+		<section className="my-20 lg:my-32 max-w-4xl mx-auto" id="projects">
 			<h2 className="text-4xl font-serif text-center">Carefully crafted projects</h2>
 			<div className="w-full overflow-auto">
 				{projects?.map((project, idx) => (
@@ -55,11 +55,11 @@ function ProjectItem({ project }: { project: IProject }) {
 
 				<div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-b from-transparent to-black/60 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 ease-out">
 					<div className="flex justify-between items-center px-8 py-5">
-						<p className="font-serif text-2xl translate-y-6 opacity-0 group-hover/card:opacity-100 group-hover/card:translate-y-0 transition-all duration-300">
+						<p className="font-serif text-2xl translate-y-6 opacity-0 group-hover/card:opacity-100 group-hover/card:translate-y-0 transition-all duration-500">
 							{project.name}
 						</p>
 
-						<button className="h-10 w-10 grid place-content-center bg-foreground rounded-full translate-x-5 rotate-45 group-hover/card:translate-x-0 group-hover/card:rotate-0 transition-all duration-500">
+						<button className="h-10 w-10 grid place-content-center bg-foreground rounded-full opacity-0 group-hover/card:opacity-100 translate-y-5 group-hover/card:translate-y-0 transition-all duration-200 ease-in">
 							<ArrowRight className="h-4 w-4 text-background -rotate-45" />
 						</button>
 					</div>

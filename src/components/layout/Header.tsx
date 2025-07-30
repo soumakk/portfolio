@@ -14,16 +14,16 @@ export default function Header() {
 			<nav className="flex items-center gap-10 border border-white/25 px-5 py-2.5 rounded-full backdrop-blur-sm bg-white/25">
 				<ul className="flex items-center gap-6 text-sm">
 					<li className="">
-						<Link href="/#work">work</Link>
+						<Link href="/">Home</Link>
 					</li>
 					<li className="">
-						<Link href="/blog">blog</Link>
+						<Link href="/#projects">Projects</Link>
 					</li>
 					<li className="">
-						<Link href="/#about">about</Link>
+						<Link href="/blog">Blog</Link>
 					</li>
 					<li className="">
-						<Link href="/#contact">contact</Link>
+						<Link href="/#contact">Contact</Link>
 					</li>
 					{/* <li className="">
 						<Link href="/resume.pdf" target="_blank" rel="noreferrer">
