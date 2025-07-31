@@ -6,8 +6,10 @@ import * as THREE from 'three'
 import fragmentShader from './shaders/fragment.glsl'
 import vertexShader from './shaders/vertex.glsl'
 
-const pallete = ['#02050A', '#0D4055', '#3C7E8C', '#B7C0BF', '#256376']
-const r = Math.floor(Math.random() * colors.length - 1)
+const pallete = ['#02050A', '#3C7E8C', '#67A1AD', '#3C4E8C', '#3C8C6A']
+// let r = Math.floor(Math.random() * colors.length - 1)
+// console.log(r)
+// r = 15
 
 function getTrueRandomInt(min, max) {
 	const range = max - min + 1
@@ -15,8 +17,6 @@ function getTrueRandomInt(min, max) {
 	crypto.getRandomValues(array)
 	return Math.floor((array[0] / (0xffffffff + 1)) * range) + min
 }
-
-console.log(r)
 
 const GradientMaterial = shaderMaterial(
 	{

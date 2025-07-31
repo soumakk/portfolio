@@ -4,7 +4,7 @@ import { Button } from '../ui/button'
 
 export default function HeroSection() {
 	return (
-		<div className="relative w-full flex justify-center py-24">
+		<div className="relative w-full flex justify-center py-32">
 			<div className="max-w-lg z-10 text-center flex flex-col items-center">
 				<figure className="">
 					<img

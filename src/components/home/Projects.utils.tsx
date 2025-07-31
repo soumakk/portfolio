@@ -1,3 +1,5 @@
+import { ReactNode } from 'react'
+
 enum Tech {
 	'React' = 'react',
 	'Next' = 'next',
@@ -9,8 +11,9 @@ enum Tech {
 }
 
 export interface IProject {
-	name: string
-	description: string
+	title: string
+	subtitle: string
+	description: ReactNode
 	github?: string
 	site?: string
 	image?: string
@@ -19,32 +22,62 @@ export interface IProject {
 
 export const projects: IProject[] = [
 	{
-		name: 'Flow',
-		description: 'A simple and secure task management application',
+		title: 'Flow',
+		subtitle: 'A local & secure task manager',
+		description: (
+			<span>
+				Flow is a simple, secure task manager app that runs entirely in your browser—no
+				account needed. With a modern, customizable UI, all your data stays private on your
+				device, stored locally using a PostgreSQL database via Pglite and IndexedDB. Enjoy
+				effortless task management with complete privacy and convenience.
+			</span>
+		),
 		github: 'https://github.com/soumakk/flow',
 		site: 'https://flow-task.netlify.app/',
 		image: '/images/projects/flow.png',
 		techstack: [Tech.React, Tech.Vite, Tech.TypeScript, Tech.Tailwind],
 	},
 	{
-		name: 'Shader Editor',
-		description: 'An shader editor to quickly play with vertex and fragment shader',
+		title: 'Shader Playground',
+		subtitle: 'Play & Preview Shaders Instantly',
+		description: (
+			<span>
+				Shader Editor is a simple, browser-based tool for instantly experimenting with
+				vertex and fragment shaders. Powered by Three.js, it lets you write and preview
+				shaders in real time, switch between 3D models, and use built-in controls to easily
+				test and tweak your effects—no setup required.
+			</span>
+		),
 		github: 'https://github.com/soumakk/shader-editor',
 		site: 'https://shader-editor.netlify.app/',
 		image: '/images/projects/editor.png',
 		techstack: [Tech.React, Tech.Vite, Tech.TypeScript, Tech.Tailwind],
 	},
 	{
-		name: 'Nova Calendar',
-		description: 'A simple calendar app to track events, inspired by Google calender',
+		title: 'Nova Calendar',
+		subtitle: 'Simple Private Event Tracker',
+		description: (
+			<span>
+				Nova Calendar is a simple calendar app inspired by Google Calendar. Track events in
+				your browser with an elegant UI—no account needed. All data stays private, stored
+				and synced locally on your device for easy, secure scheduling.
+			</span>
+		),
 		github: 'https://github.com/soumakk/calendar-app',
 		site: 'https://nova-calendar.netlify.app/',
 		image: '/images/projects/calendar.png',
 		techstack: [Tech.React, Tech.Vite, Tech.TypeScript, Tech.Tailwind],
 	},
 	{
-		name: 'Hue Picker',
-		description: 'A simple color picker that shows a detailed color options',
+		title: 'Hue Picker',
+		subtitle: 'Simple GLSL Color Selector',
+		description: (
+			<span>
+				Hue Picker is a simple browser color picker that provides detailed options and
+				outputs colors in GLSL format—ideal for shader and graphics work. Quickly select and
+				copy colors with an easy-to-use interface designed for creative coding.
+			</span>
+		),
 		github: 'https://github.com/soumakk/color-picker',
 		site: 'https://hue-picker.netlify.app/',
 		image: '/images/projects/picker.png',

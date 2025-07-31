@@ -20,26 +20,29 @@ function ProjectItem({ project }: { project: IProject }) {
 			<div className="grid grid-cols-2 mb-12">
 				<div>
 					<h3 className="font-serif text-2xl max-w-xs mx-auto">
-						Build Shaders in browser with vertex and fragment shader
+						{project.title} - {project.subtitle}
 					</h3>
 				</div>
 
 				<div className="text-sm max-w-sm">
-					<p className="mb-5">
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-						Lorem Ipsum has been the industrys standard dummy text ever since the 1500s,
-						when an unknown printer took a galley of type and scrambled it to make a
-						type specimen book.
-					</p>
+					<p className="mb-8 leading-relaxed">{project.description}</p>
 
-					<div className="flex items-center gap-5">
-						<a href="" className="flex items-center gap-1">
+					<div className="flex items-center gap-6">
+						<a
+							href={project.github}
+							target="_blank"
+							className="flex items-center gap-1 group/link"
+						>
 							GitHub
-							<ArrowRight className="h-4 w-4 -rotate-45" />
+							<ArrowRight className="h-4 w-4 -rotate-45 group-hover/link:translate-x-1 transition-transform duration-100" />
 						</a>
-						<a href="" className="flex items-center gap-1">
+						<a
+							href={project.site}
+							target="_blank"
+							className="flex items-center gap-1 group/link"
+						>
 							Website
-							<ArrowRight className="h-4 w-4 -rotate-45" />
+							<ArrowRight className="h-4 w-4 -rotate-45 group-hover/link:translate-x-1 transition-transform duration-100" />
 						</a>
 					</div>
 				</div>
@@ -56,12 +59,16 @@ function ProjectItem({ project }: { project: IProject }) {
 				<div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-b from-transparent to-black/60 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 ease-out">
 					<div className="flex justify-between items-center px-8 py-5">
 						<p className="font-serif text-2xl translate-y-6 opacity-0 group-hover/card:opacity-100 group-hover/card:translate-y-0 transition-all duration-500">
-							{project.name}
+							{project.title}
 						</p>
 
-						<button className="h-10 w-10 grid place-content-center bg-foreground rounded-full opacity-0 group-hover/card:opacity-100 translate-y-5 group-hover/card:translate-y-0 transition-all duration-200 ease-in">
+						<a
+							href={project.site}
+							target="_blank"
+							className="h-10 w-10 grid place-content-center bg-foreground rounded-full opacity-0 group-hover/card:opacity-100 translate-y-5 group-hover/card:translate-y-0 transition-all duration-200 ease-in"
+						>
 							<ArrowRight className="h-4 w-4 text-background -rotate-45" />
-						</button>
+						</a>
 					</div>
 				</div>
 			</figure>
