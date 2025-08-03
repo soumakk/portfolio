@@ -39,8 +39,8 @@ export default async function BlogPost({ params }: any) {
 				</Link>
 
 				<div className="mt-10">
-					<h2 className="text-3xl font-semibold mb-2">{metadata.title}</h2>
-					<p className="text-muted-foreground">
+					<h2 className="text-4xl mb-2 font-serif">{metadata.title}</h2>
+					<p className="text-sm font-light">
 						<span>{metadata.date}</span>
 						<span> &bull; </span>
 						<span>{readingTime}</span>

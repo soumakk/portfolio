@@ -37,9 +37,11 @@ export default function BlogsList({ blogsList }: { blogsList: IBlogListData[] })
 			</div>
 
 			<div className="flex justify-center">
-				<Button variant="glass" className="rounded-full shadow-none" size="lg">
-					See more
-				</Button>
+				<Link href="/blog">
+					<Button variant="glass" className="rounded-full shadow-none" size="lg">
+						See more
+					</Button>
+				</Link>
 			</div>
 		</section>
 	)
