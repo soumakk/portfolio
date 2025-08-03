@@ -1,6 +1,5 @@
 import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
-import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { fetchBlogs, getBlogContent } from '@/lib/blogs'
 import { getMDXComponents } from '@/lib/mdx-components'
@@ -8,7 +7,7 @@ import { mdxOptions } from '@/lib/mdx-plugins'
 import { ArrowLeft, ArrowRight, Loader } from 'lucide-react'
 import { MDXRemote } from 'next-mdx-remote-client/rsc'
 import Link from 'next/link'
-import React, { Suspense } from 'react'
+import { Suspense } from 'react'
 
 export default async function BlogPost({ params }: any) {
 	const { slug } = await params
@@ -39,27 +38,13 @@ export default async function BlogPost({ params }: any) {
 					</Button>
 				</Link>
 
-				<figure className="flex justify-center my-8">
-					<img
-						className="max-h-[25rem]"
-						src={`/blogs/${metadata.poster}`}
-						alt={metadata.title}
-					/>
-				</figure>
-
-				<h2 className="text-3xl font-semibold mt-4 mb-2">{metadata.title}</h2>
-				<p className="text-muted-foreground">
-					<span>{metadata.date}</span>
-					<span> &bull; </span>
-					<span>{readingTime}</span>
-				</p>
-
-				<div className="flex flex-wrap gap-2 mt-4">
-					{metadata?.tags?.split(',')?.map((tag) => (
-						<Badge className="px-4 py-2 rounded-full" variant="outline" key={tag}>
-							{tag}
-						</Badge>
-					))}
+				<div className="mt-10">
+					<h2 className="text-3xl font-semibold mb-2">{metadata.title}</h2>
+					<p className="text-muted-foreground">
+						<span>{metadata.date}</span>
+						<span> &bull; </span>
+						<span>{readingTime}</span>
+					</p>
 				</div>
 
 				<Suspense

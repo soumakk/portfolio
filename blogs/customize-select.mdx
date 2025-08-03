@@ -177,6 +177,159 @@ select:open::picker-icon {
 }
 ```
 
+
+<Sandbox
+	files={{
+		'/index.html': {
+			code: `
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Sandpack Static Example</title>
+		</head>
+		<body>
+			<div class="select-field">
+				<label for="feeling">How are you feeling today?</label>
+				<select id="feeling" name="feeling">
+					<button>
+						<selectedcontent></selectedcontent>
+					</button>
+					<option value="happy">😊 Happy</option>
+					<option value="sad">😢 Sad</option>
+					<option value="excited">🤩 Excited</option>
+					<option value="angry">😡 Angry</option>
+					<option value="surprised">😲 Surprised</option>
+					<option value="bored">😐 Bored</option>
+					<option value="tired">😴 Tired</option>
+					<option value="confused">😕 Confused</option>
+					<option value="love">😍 In Love</option>
+					<option value="scared">😱 Scared</option>
+				</select>
+			</div>
+
+			<script src="script.js"></script>
+		</body>
+	</html>
+
+`,
+			active: true, // this file is shown by default
+		}, 
+		'/styles.css': {
+			code: `
+	body {
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		background: #f8f9fa;
+		display: flex;
+		justify-content: center;
+		padding: 40px;
+	}
+
+	.select-field {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	select,
+	::picker(select) {
+		appearance: base-select;
+	}
+
+	select {
+		border: 2px solid #d3d7da;
+		background: #ffffff;
+		height: 40px;
+		min-width: 200px;
+		display: flex;
+		align-items: center;
+		padding-left: 16px;
+		padding-right: 16px;
+		border-radius: 6px;
+		transition: 0.4s;
+		outline-color: #4263eb;
+
+		&:focus-visible {
+			outline-offset: 4px;
+		}
+	}
+
+	select::picker-icon {
+		color: #999;
+		transition: 0.4s rotate;
+	}
+	select:open::picker-icon {
+		rotate: 180deg;
+	}
+
+	::picker(select) {
+		border: 1px solid #d3d7da;
+		border-radius: 6px;
+		padding: 6px;
+		max-height: 250px;
+		transition: all 0.4s allow-discrete;
+		opacity: 0;
+		top: calc(anchor(bottom) + 8px);
+		left: anchor(0%);
+	}
+
+	::picker(select):popover-open {
+		opacity: 1;
+		top: calc(anchor(bottom) + 8px);
+	}
+
+	@starting-style {
+		::picker(select):popover-open {
+			opacity: 0;
+			top: calc(anchor(bottom) + 30px);
+		}
+	}
+
+	option {
+		display: flex;
+		justify-content: flex-start;
+		gap: 16px;
+		background: #ffffff;
+		padding: 4px 12px;
+		transition: 0.4s;
+		border-radius: 6px;
+		outline-color: #4263eb;
+
+		&:focus-visible {
+			outline-offset: 2px;
+		}
+
+		&:hover,
+		&:focus {
+			background: #efefef;
+		}
+
+		&:checked {
+			background: #2979ff;
+			color: #ffffff;
+		}
+
+		&::checkmark {
+			order: 1;
+			margin-left: auto;
+			content: '✔';
+		}
+	}
+
+	selectedcontent {
+		display: flex;
+		gap: 8px;
+	}
+
+    		`,
+    	},
+    	'/index.js': {
+    		code: `import './styles.css';`,
+    		hidden: true,
+    	},
+    }}
+
+/>
+
 ## **Conclusion**
 
 With these new CSS features, customizing a select field is easier and more powerful than ever. You can control every aspect of the select, from the field itself to the dropdown, options, and icons. This unlocks a world of creative UI possibilities.

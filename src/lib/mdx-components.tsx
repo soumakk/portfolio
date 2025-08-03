@@ -1,3 +1,4 @@
+import Sandbox from '@/components/home/Sandbox'
 import type { MDXComponents } from 'mdx/types'
 
 export function getMDXComponents(): MDXComponents {
@@ -74,5 +75,6 @@ export function getMDXComponents(): MDXComponents {
 			</a>
 		),
 		wrapper: ({ children }) => <div className="my-10 mdx-wrapper">{children}</div>,
+		Sandbox: Sandbox,
 	}
 }

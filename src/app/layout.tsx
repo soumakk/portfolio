@@ -67,7 +67,6 @@ export default function RootLayout({
 				<GoogleAnalytics gaId="G-W52Q294D1Z" />
 			</head>
 			<body className={cn(sans.variable, serif.variable)}>
-				<LenisScroll />
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="dark"

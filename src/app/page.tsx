@@ -1,3 +1,4 @@
+import LenisScroll from '@/components/custom/LenisScroll'
 import About from '@/components/home/About'
 import Background from '@/components/home/Background'
 import BlogsList from '@/components/home/BlogsList'
@@ -14,6 +15,7 @@ export default async function Home() {
 
 	return (
 		<>
+			<LenisScroll />
 			<Background />
 			<main className="relative overflow-x-hidden">
 				<div className="max-w-[1400px] mx-auto px-6">
