@@ -3,13 +3,14 @@ import { extend, ThreeElement, useFrame, useThree } from '@react-three/fiber'
 import colors from 'nice-color-palettes'
 import { useRef } from 'react'
 import * as THREE from 'three'
-import fragmentShader from './shaders/fragment.glsl'
-import vertexShader from './shaders/vertex.glsl'
+import fragmentShader from '../shaders/fragment.glsl'
+import vertexShader from '../shaders/vertex.glsl'
 
 const pallete = ['#02050A', '#3C7E8C', '#67A1AD', '#3C4E8C', '#3C8C6A']
-// let r = Math.floor(Math.random() * colors.length - 1)
-// console.log(r)
-// r = 15
+let r = Math.floor(Math.random() * colors.length - 1)
+console.log(r)
+const rs = [15, 48, 5]
+r = 15
 
 function getTrueRandomInt(min, max) {
 	const range = max - min + 1
@@ -21,7 +22,7 @@ function getTrueRandomInt(min, max) {
 const GradientMaterial = shaderMaterial(
 	{
 		uTime: 0,
-		uColors: colors[15]?.map((c) => new THREE.Color(c)),
+		uColors: colors[r]?.map((c) => new THREE.Color(c)),
 		uCoord: new THREE.Vector2(getTrueRandomInt(0.1, 0.2), getTrueRandomInt(0.3, 0.5)),
 	},
 	vertexShader,
@@ -41,7 +42,7 @@ export default function Plane() {
 
 	useFrame(({ clock }) => {
 		if (matRef.current) {
-			matRef.current.uTime = clock.elapsedTime * 0.1
+			matRef.current.uTime = clock.elapsedTime * 0.05
 		}
 	})
 
@@ -65,6 +66,7 @@ export function CameraController() {
 
 	useFrame(() => {
 		// camera.position.set(...position)
+		// camera.position.set(0, -2, 10)
 		camera.position.set(0, -1.2, 1.4)
 		camera.lookAt(0, 0, 0)
 	})

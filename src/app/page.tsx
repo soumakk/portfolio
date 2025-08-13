@@ -1,6 +1,6 @@
 import LenisScroll from '@/components/custom/LenisScroll'
 import About from '@/components/home/About'
-import Background from '@/components/home/Background'
+import Background from '@/components/home/background/Background'
 import BlogsList from '@/components/home/BlogsList'
 import Contact from '@/components/home/Contact'
 import HeroSection from '@/components/home/HeroSection'
@@ -11,7 +11,7 @@ import Header from '@/components/layout/Header'
 import { fetchBlogs } from '@/lib/blogs'
 
 export default async function Home() {
-	const blogsList = await fetchBlogs()
+	// const blogsList = await fetchBlogs()
 
 	return (
 		<>
@@ -23,7 +23,7 @@ export default async function Home() {
 					<HeroSection />
 					<About />
 					<Projects />
-					<BlogsList blogsList={blogsList} />
+					{/* <BlogsList blogsList={blogsList} /> */}
 					<Contact />
 					<Footer />
 				</div>

@@ -86,37 +86,40 @@ void main() {
     vec3 pos = position;
 
     vec2 noiseCoord = uv * vec2(2.0,4.0);
-    float strength = 0.4;
+
+    
     // float tilt = -0.1 * uv.y;
-    float n = snoise(vec3(noiseCoord.x + uTime * 0.2, noiseCoord.y, uTime * 0.1 ));
-    n += snoise(vec3(uv.xy, uTime * 0.1));
+    float n = snoise(vec3(noiseCoord.x + uTime * 0.3, noiseCoord.y, uTime * 0.6 ));
+
+
+    for(int i =0; i<4; i++) {
+      n += snoise(float(i) * vec3(uv.x, uv.y * float(i), uTime * 0.4));
+    }
+
     // n = max(0.,n);
-    pos.z += n * strength;
+    pos.z += n * 0.2;
 
 
     vec3 color = uColors[0];
     for(int i=0; i<5; i++) {
-        vec2 noiseFreq = vec2(0.5,0.5);
-        float noiseFlow = 0.4 - float(i) * 0.02;
+        vec2 noiseFreq = vec2(0.6,0.8);
         float noiseSpeed = 0.2 - float(i) * 0.01; 
-        float noiseFloor = 0.1;
-        float noiseCeil = 0.2 + float(i) * 0.5; // squiz the colors
+        float noiseFloor = 0.2;
+        float noiseCeil = 0.9 + float(i) * 0.5; 
+        float noiseFlow = sin(0.5 + float(i) * 0.02);
 
         float cn = snoise(vec3(
             noiseCoord.x * noiseFreq.x + uTime * noiseFlow, 
-            noiseCoord.y * noiseFreq.y,
+            noiseCoord.y + 2. * noiseFreq.y,
             uTime *  noiseSpeed
-        ));
-        // cn += snoise(vec3(noiseCoord.xy, uTime * 0.1));
+        )) * 4.;
 
-        // cn += 0.3 * sin(uv.x * 5. + uTime * 0.5);
-        // cn = abs(sin(cn * 3.));
+        // cn += abs(sin(cn) / .5);
 
         cn = smoothstep(noiseFloor, noiseCeil, cn);
 
         color = mix(color, uColors[i], cn);
     }
-
 
     vColor = color;
     gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
