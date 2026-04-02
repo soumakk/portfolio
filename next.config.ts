@@ -1,14 +1,22 @@
-import type { NextConfig } from 'next'
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-	webpack: (config) => {
-		config.module.rules.push({
-			test: /\.(glsl|vs|fs|vert|frag)$/,
-			use: ['raw-loader', 'glslify-loader'],
-		})
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.(glsl|vs|fs|vert|frag)$/,
+      use: ["raw-loader", "glslify-loader"],
+    });
 
-		return config
-	},
-}
+    return config;
+  },
+  turbopack: {
+    rules: {
+      "*.glsl": {
+        loaders: ["raw-loader", "glslify-loader"],
+        as: "*.js",
+      },
+    },
+  },
+};
 
-export default nextConfig
+export default nextConfig;
