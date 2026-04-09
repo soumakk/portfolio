@@ -1,10 +1,10 @@
-//	Simplex 3D Noise 
+//	Simplex 3D Noise
 //	by Ian McEwan, Stefan Gustavson (https://github.com/stegu/webgl-noise)
 //
 vec4 permute(vec4 x){return mod(((x*34.0)+1.0)*x, 289.0);}
 vec4 taylorInvSqrt(vec4 r){return 1.79284291400159 - 0.85373472095314 * r;}
 
-float snoise(vec3 v){ 
+float snoise(vec3 v){
   const vec2  C = vec2(1.0/6.0, 1.0/3.0) ;
   const vec4  D = vec4(0.0, 0.5, 1.0, 2.0);
 
@@ -18,16 +18,16 @@ float snoise(vec3 v){
   vec3 i1 = min( g.xyz, l.zxy );
   vec3 i2 = max( g.xyz, l.zxy );
 
-  //  x0 = x0 - 0. + 0.0 * C 
+  //  x0 = x0 - 0. + 0.0 * C
   vec3 x1 = x0 - i1 + 1.0 * C.xxx;
   vec3 x2 = x0 - i2 + 2.0 * C.xxx;
   vec3 x3 = x0 - 1. + 3.0 * C.xxx;
 
 // Permutations
-  i = mod(i, 289.0 ); 
-  vec4 p = permute( permute( permute( 
+  i = mod(i, 289.0 );
+  vec4 p = permute( permute( permute(
              i.z + vec4(0.0, i1.z, i2.z, 1.0 ))
-           + i.y + vec4(0.0, i1.y, i2.y, 1.0 )) 
+           + i.y + vec4(0.0, i1.y, i2.y, 1.0 ))
            + i.x + vec4(0.0, i1.x, i2.x, 1.0 ));
 
 // Gradients
@@ -69,58 +69,23 @@ float snoise(vec3 v){
 // Mix final noise value
   vec4 m = max(0.6 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0);
   m = m * m;
-  return 42.0 * dot( m*m, vec4( dot(p0,x0), dot(p1,x1), 
+  return 42.0 * dot( m*m, vec4( dot(p0,x0), dot(p1,x1),
                                 dot(p2,x2), dot(p3,x3) ) );
 }
 
 
 uniform float uTime;
-uniform vec3 uColors[5];
-uniform vec2 uCoord;
-
 varying vec2 vUv;
-varying vec3 vColor;
+varying float vDisplacement;
 
 void main() {
     vUv = uv;
     vec3 pos = position;
 
-    vec2 noiseCoord = uv * vec2(2.0,4.0);
+    float noise = snoise(vec3(pos.x * 0.4, pos.y * 0.4, uTime * 0.5));
+    pos.z += noise * 0.3;
 
-    
-    // float tilt = -0.1 * uv.y;
-    float n = snoise(vec3(noiseCoord.x + uTime * 0.3, noiseCoord.y, uTime * 0.6 ));
+    vDisplacement = noise;
 
-
-    for(int i =0; i<4; i++) {
-      n += snoise(float(i) * vec3(uv.x, uv.y * float(i), uTime * 0.4));
-    }
-
-    // n = max(0.,n);
-    pos.z += n * 0.2;
-
-
-    vec3 color = uColors[0];
-    for(int i=0; i<5; i++) {
-        vec2 noiseFreq = vec2(0.6,0.8);
-        float noiseSpeed = 0.2 - float(i) * 0.01; 
-        float noiseFloor = 0.2;
-        float noiseCeil = 0.9 + float(i) * 0.5; 
-        float noiseFlow = sin(0.5 + float(i) * 0.02);
-
-        float cn = snoise(vec3(
-            noiseCoord.x * noiseFreq.x + uTime * noiseFlow, 
-            noiseCoord.y + 2. * noiseFreq.y,
-            uTime *  noiseSpeed
-        )) * 4.;
-
-        // cn += abs(sin(cn) / .5);
-
-        cn = smoothstep(noiseFloor, noiseCeil, cn);
-
-        color = mix(color, uColors[i], cn);
-    }
-
-    vColor = color;
     gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
 }

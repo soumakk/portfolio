@@ -83,7 +83,7 @@ export default function RootLayout({
       <body className={cn(sans.variable, serif.variable)}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           storageKey="theme"
           disableTransitionOnChange
         >
