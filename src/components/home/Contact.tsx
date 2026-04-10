@@ -1,12 +1,6 @@
+import { SocialLinks } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import React from "react";
-
-const SocialLinks = {
-  Github: "https://github.com/soumakk",
-  LinkedIn: "https://www.linkedin.com/in/soumakkdutta/",
-  Twitter: "https://x.com/_soumakk_",
-  // Instagram: 'https://www.instagram.com/__soumak__/',
-};
 
 const email = "soumakkdutta@gmail.com";
 
@@ -26,6 +20,7 @@ export default function Contact() {
             href={SocialLinks[social]}
             className="flex items-center gap-1 group"
             key={social}
+            target="_blank"
           >
             {social}
             <ArrowRight className="h-4 w-4 -rotate-45 group-hover:translate-x-1 transition-transform duration-100" />

@@ -2,6 +2,10 @@
 
 import Link from "next/link";
 import { Button } from "../ui/button";
+import GitHub from "../icons/GitHub";
+import LinkedIn from "../icons/LinkedIn";
+import X from "../icons/X";
+import { SocialLinks } from "@/lib/utils";
 
 export default function HeroSection() {
   return (
@@ -25,6 +29,27 @@ export default function HeroSection() {
           technologies, exploring innovative ways to make the web more
           interactive.
         </p>
+
+        <div className="flex gap-5 mb-6">
+          <Link href={SocialLinks.Github} target="_blank">
+            <GitHub
+              className="fill-white hover:scale-110 transition-transform duration-200"
+              size={32}
+            />
+          </Link>
+          <Link href={SocialLinks.LinkedIn} target="_blank">
+            <LinkedIn
+              size={32}
+              className="fill-white hover:scale-110 transition-transform duration-200"
+            />
+          </Link>
+          <Link href={SocialLinks.X} target="_blank">
+            <X
+              size={32}
+              className="fill-white hover:scale-110 transition-transform duration-200"
+            />
+          </Link>
+        </div>
 
         <Link href="/resume.pdf" target="_blank">
           <Button
