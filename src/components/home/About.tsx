@@ -1,25 +1,30 @@
-import React from 'react'
+import React from "react";
 
 export default function About() {
-	return (
-		<section className="py-40" id="about">
-			<div className="max-w-md mx-auto leading-relaxed space-y-5">
-				<p>
-					My web development journey began in college during the PHP era, starting with HTML, CSS, and jQuery before diving deep into JavaScript and
-					the React ecosystem. After mastering React, I expanded into Node.js through freelance work, which taught me valuable client collaboration
-					skills.
-				</p>
+  return (
+    <section className="py-40 min-h-screen" id="about">
+      <h2 className="text-4xl font-serif text-center mb-12">My Story</h2>
+      <div className="max-w-md mx-auto leading-relaxed space-y-5">
+        <p>
+          I started my journey in college working with HTML, CSS, jQuery, and
+          PHP, before diving deep into JavaScript and the React ecosystem.
+          Through freelance work, I expanded into Node.js and gained valuable
+          experience collaborating directly with clients and delivering
+          real-world solutions.
+        </p>
 
-				<p>
-					This foundation led to my first company working with React and TypeScript on diverse projects, where I also developed a strong understanding
-					of UI/UX design. I learned to bridge the gap between beautiful interfaces and seamless functionality.
-				</p>
+        <p>
+          In my professional experience, I’ve worked on diverse projects,
+          developing a strong understanding of UI/UX and learning how to balance
+          visual design with seamless functionality.
+        </p>
 
-				<p>
-					Today, I&apos;m constantly evolving – exploring AI tools to enhance my development workflow and experimenting with WebGL to create
-					interactive 3D web experiences. Check out my projects and blog where I share insights from my development journey.
-				</p>
-			</div>
-		</section>
-	)
+        <p>
+          Lately, I’ve been exploring new challenges—experimenting with WebGL,
+          3D experiences on the web, and learning 3D software Blender. I’m also
+          using AI tools to improve my workflow and build more efficiently.
+        </p>
+      </div>
+    </section>
+  );
 }

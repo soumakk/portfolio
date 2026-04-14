@@ -17,45 +17,67 @@ export interface IProject {
   github?: string;
   site?: string;
   image?: string;
-  techstack: Tech[];
 }
 
 export const projects: IProject[] = [
   {
     title: "Simple Finance",
-    subtitle: "A simple personal expense tracker",
+    subtitle: "A personal expense tracker",
     description: (
       <span>
-        A minimal, focused expense tracker designed to do one thing perfectly:
-        help users manage their money without the clutter. Built with Next.js,
-        React, and Supabase, the application provides a frictionless way to log
-        daily transactions. The core experience centers around an intuitive,
-        data-driven dashboard that instantly visualizes spending habits,
-        breaking down financial data through interactive monthly trends and
-        category analytics.
+        A minimal expense tracker built to simplify money management without
+        unnecessary clutter. Developed with Next.js, React, and Supabase, it
+        enables quick transaction logging and features a clean, data-driven
+        dashboard to visualize spending through monthly trends and category
+        insights.
       </span>
     ),
     github: "https://github.com/soumakk/personal-finance",
     site: "https://simple-fi.netlify.app/",
     image: "/images/projects/finance.png",
-    techstack: [Tech.React, Tech.Next, Tech.TypeScript, Tech.Tailwind],
   },
   {
     title: "Flow",
     subtitle: "A local & secure task manager",
     description: (
       <span>
-        Flow is a simple, secure task manager app that runs entirely in your
-        browser—no account needed. With a modern, customizable UI, all your data
-        stays private on your device, stored locally using a PostgreSQL database
-        via Pglite and IndexedDB. Enjoy effortless task management with complete
-        privacy and convenience.
+        Flow is a simple, privacy-focused task manager that runs entirely in the
+        browser with no account required. Built with a modern, customizable UI,
+        it stores data locally using PGlite and IndexedDB, ensuring a secure and
+        seamless task management experience.
       </span>
     ),
     github: "https://github.com/soumakk/flow",
     site: "https://flow-task.netlify.app/",
     image: "/images/projects/flow.png",
-    techstack: [Tech.React, Tech.Vite, Tech.TypeScript, Tech.Tailwind],
+  },
+  {
+    title: "3D Calculator",
+    subtitle: "",
+    description: (
+      <span>
+        A 3D calculator modeled and textured in Blender, then rendered using
+        Three.js and React Three Fiber. It features customizable keycap colors
+        and was built as a fun creative exploration of 3D on the web.
+      </span>
+    ),
+    github: "https://github.com/soumakk/3d-calculator",
+    site: "https://3d-calculator-app.netlify.app/",
+    image: "/images/projects/calculator.png",
+  },
+  {
+    title: "Water Bottle Configurator",
+    subtitle: "",
+    description: (
+      <span>
+        A 3D water bottle modeled in Blender and rendered using Three.js and
+        React Three Fiber. It allows users to customize styles and colors,
+        created as an interactive exploration of 3D experiences on the web.
+      </span>
+    ),
+    github: "https://github.com/soumakk/water-bottle-configurator",
+    site: "https://water-bottle-configurator.netlify.app/",
+    image: "/images/projects/water-bottle.png",
   },
   {
     title: "Shader Playground",
@@ -72,7 +94,6 @@ export const projects: IProject[] = [
     github: "https://github.com/soumakk/shader-editor",
     site: "https://shader-editor.netlify.app/",
     image: "/images/projects/editor.png",
-    techstack: [Tech.React, Tech.Vite, Tech.TypeScript, Tech.Tailwind],
   },
   // {
   // 	title: 'Nova Calendar',
@@ -103,7 +124,6 @@ export const projects: IProject[] = [
     github: "https://github.com/soumakk/color-picker",
     site: "https://hue-picker.netlify.app/",
     image: "/images/projects/picker.png",
-    techstack: [Tech.React, Tech.Vite, Tech.TypeScript],
   },
 ];
 

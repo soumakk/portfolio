@@ -9,13 +9,13 @@ import { SocialLinks } from "@/lib/utils";
 
 export default function HeroSection() {
   return (
-    <div className="relative w-full flex justify-center py-32">
-      <div className="max-w-lg z-10 text-center flex flex-col items-center">
+    <div className="relative w-full flex justify-center py-48 min-h-screen">
+      <div className="max-w-lg text-center flex flex-col items-center">
         <figure className="">
           <img
             src="/images/me.jpg"
             alt="It's me, Soumak"
-            className="h-28 w-28 rounded-full"
+            className="h-30 w-30 rounded-full"
           />
         </figure>
 
@@ -30,7 +30,7 @@ export default function HeroSection() {
           interactive.
         </p>
 
-        <div className="flex gap-5 mb-6">
+        <div className="flex gap-5 mb-10">
           <Link href={SocialLinks.Github} target="_blank">
             <GitHub
               className="fill-white hover:scale-110 transition-transform duration-200"
