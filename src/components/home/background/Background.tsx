@@ -7,9 +7,9 @@ import {
   useFrame,
   useThree,
 } from "@react-three/fiber";
-import { shaderMaterial } from "@react-three/drei";
+import { OrbitControls, shaderMaterial } from "@react-three/drei";
 import colors from "nice-color-palettes";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import fragmentShader from "../shaders/fragment.glsl";
 import vertexShader from "../shaders/vertex.glsl";
@@ -17,6 +17,9 @@ import vertexShader from "../shaders/vertex.glsl";
 // Grab a random palette
 let r = Math.floor(Math.random() * colors.length);
 r = 86;
+// r = 40;
+// r = 70;
+// r = 96;
 
 console.log(r);
 
@@ -24,6 +27,7 @@ const GradientMaterial = shaderMaterial(
   {
     uTime: 0,
     uColors: colors[r]?.map((c) => new THREE.Color(c)),
+    uPointer: new THREE.Vector2(),
   },
   vertexShader,
   fragmentShader,
@@ -39,11 +43,24 @@ extend({ GradientMaterial });
 
 function Plane() {
   const matRef = useRef<any>(null);
+  const pointer = useRef(new THREE.Vector2());
+
+  useEffect(() => {
+    const handleMove = (e) => {
+      pointer.current.x = (e.clientX / window.innerWidth) * 2 - 1;
+      pointer.current.y = -(e.clientY / window.innerHeight) * 2 + 1;
+    };
+
+    window.addEventListener("mousemove", handleMove);
+    return () => window.removeEventListener("mousemove", handleMove);
+  }, []);
 
   useFrame(({ clock }) => {
     if (matRef.current) {
+      matRef.current.uPointer.lerp(pointer.current, 0.03);
+
       // Slower time multiplier for a more relaxed, premium feel
-      matRef.current.uTime = clock.elapsedTime * 0.15;
+      matRef.current.uTime = clock.elapsedTime * 0.2;
     }
   });
 
@@ -56,22 +73,11 @@ function Plane() {
   );
 }
 
-function CameraController() {
-  const { camera } = useThree();
-
-  useFrame(() => {
-    camera.position.set(0, 0, 2);
-    camera.lookAt(0, 0, 0);
-  });
-
-  return null;
-}
-
 export default function Background() {
   return (
     <div id="background" className="h-full w-full fixed inset-0 -z-10 bg-black">
       <Canvas camera={{ position: [0, 0, 2], fov: 45 }}>
-        <CameraController />
+        {/*<OrbitControls />*/}
         <Plane />
       </Canvas>
     </div>

@@ -27,13 +27,12 @@ export default async function Home() {
         }}
       />*/}
 
-      <main className="relative overflow-x-hidden">
+      <main className="relative overflow-x-hidden pointer-even">
         <div className="max-w-[1400px] mx-auto px-6">
           <Header />
           <HeroSection />
           <About />
           <Projects />
-          {/* <BlogsList blogsList={blogsList} /> */}
           <Contact />
           <Footer />
         </div>
