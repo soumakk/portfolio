@@ -9,8 +9,8 @@ import { SocialLinks } from "@/lib/utils";
 
 export default function HeroSection() {
   return (
-    <div className="relative w-full flex justify-center py-48 min-h-screen">
-      <div className="max-w-lg text-center flex flex-col items-center">
+    <div className="relative w-full flex justify-center pt-48 pb-20 lg:py-48 lg:min-h-screen">
+      <div className="max-w-lg text-center flex flex-col items-center justify-center">
         <figure className="">
           <img
             src="/images/me.jpg"
@@ -19,7 +19,7 @@ export default function HeroSection() {
           />
         </figure>
 
-        <h1 className="text-5xl mb-6 mt-8 font-serif">
+        <h1 className="text-4xl lg:text-5xl mb-6 mt-8 font-serif">
           Hey, I’m Soumak & welcome to my creative space
         </h1>
 

@@ -13,7 +13,7 @@ export default function Projects() {
         Carefully crafted projects
       </h2>
 
-      <div className="w-full overflow-auto grid grid-cols-2 gap-8">
+      <div className="w-full overflow-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
         {projects?.map((project, idx) => (
           <ProjectItem
             key={idx}
@@ -43,7 +43,7 @@ function ProjectItem({
 }) {
   return (
     <div className="relative cursor-pointer" onClick={onClick}>
-      <figure className="relative rounded-2xl overflow-hidden h-[320px] group/card">
+      <figure className="relative rounded-2xl overflow-hidden h-[200px] lg:h-[320px] group/card">
         <img
           src={project.image}
           alt=""
@@ -83,15 +83,15 @@ function ProjectDialog({
       {project && (
         <DialogContent className="max-w-3xl p-0 overflow-hidden">
           {/* IMAGE */}
-          <img src={project.image} className="w-full h-96 object-cover" />
+          <img
+            src={project.image}
+            className="w-full h-60 lg:h-96 object-cover"
+          />
 
           <div className="p-6">
-            <DialogHeader>
-              <DialogTitle className="text-2xl font-serif font-normal">
-                {project.title}{" "}
-                {project.subtitle ? ` - ${project.subtitle}` : ""}
-              </DialogTitle>
-            </DialogHeader>
+            <h2 className="text-3xl font-serif font-normal">
+              {project.title} {project.subtitle ? ` - ${project.subtitle}` : ""}
+            </h2>
 
             <p className="text-sm leading-relaxed mt-4 mb-6">
               {project.description}

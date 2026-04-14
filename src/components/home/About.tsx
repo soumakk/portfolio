@@ -2,7 +2,7 @@ import React from "react";
 
 export default function About() {
   return (
-    <section className="py-40 min-h-screen" id="about">
+    <section className="py-20 lg:py-40 lg:min-h-screen" id="about">
       <h2 className="text-4xl font-serif text-center mb-12">My Story</h2>
       <div className="max-w-md mx-auto leading-relaxed space-y-5">
         <p>
