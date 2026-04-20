@@ -2,18 +2,18 @@ import { cn } from "@/lib/utils";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
-import { Arapey, Noto_Sans } from "next/font/google";
+import { Parkinsans, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import LenisScroll from "@/components/custom/LenisScroll";
 
-const sans = Noto_Sans({
+const sans = Parkinsans({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-sans",
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const serif = Arapey({
+const serif = Instrument_Serif({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-serif",

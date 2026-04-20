@@ -38,7 +38,7 @@ export const projects: IProject[] = [
   },
   {
     title: "Flow",
-    subtitle: "A local & secure task manager",
+    subtitle: "A secure & offline task manager",
     description: (
       <span>
         Flow is a simple, privacy-focused task manager that runs entirely in the
